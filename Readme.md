@@ -1,5 +1,5 @@
 ![alt text](image.png)
-# Thinking Seed - Semilla - Gravity HyperScale Thinking
+# Thinking Seed - Semilla de proyectos - Gravity HyperScale Thinking
 
 > **Protocolo de Snapshot Técnico para Modelos de Razonamiento Extendido**
 
