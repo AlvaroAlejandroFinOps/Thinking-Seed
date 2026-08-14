@@ -4,7 +4,7 @@
 > **Protocolo de Snapshot Técnico para Modelos de Razonamiento Extendido**
 
 Seed de Gravity HyperScale Thinking es un marco de trabajo de ingeniería diseñado para cerrar la brecha entre la complejidad de los repositorios de software actuales y la capacidad de los modelos de lenguaje (LLMs) para procesar, entender y operar sobre ellos sin ambigüedades.
-> **Permite que los modelos de lenguaje (LLMs) de flujos conversacionales procesen y entiendan y proyectos agenticos para minimizar consumo de tokens en procesamiento de grandes repositorios de software**
+> **Permite que los modelos de lenguaje (LLMs) de flujos conversacionales procesen y entiendan proyectos agenticos para minimizar consumo de tokens en procesamiento de grandes repositorios de software**
 
 En lugar de depender de prompts genéricos, Thinking Seed estandariza la creación de un `Seed.md`: un contrato técnico autosuficiente que actúa como la "fuente de verdad" para cualquier agente conversacional, IDE avanzado o auditoría de arquitectura.
 
