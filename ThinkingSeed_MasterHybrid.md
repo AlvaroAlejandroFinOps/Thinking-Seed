@@ -1,44 +1,3 @@
----
-name: seed
-description: >-
-  Crea un snapshot técnico y portable de un proyecto en formato seed-[nombre-proyecto].md
-  siguiendo el estándar ThinkingSeed_MasterHybrid.md y alojándolo en la carpeta 001_Seed
-  del directorio donde se ejecute. Usar cuando el usuario ponga /seed o solicite crear el seed del proyecto.
----
-
-# Workflow: Generación de ThinkingSeed Master Hybrid (`/seed`)
-
-Este workflow inspecciona el proyecto o subdirectorio actual y genera un archivo de documentación técnica estructurada y verificable denominado `seed-[nombre-proyecto].md` alojado en `<directorio-actual>/001_Seed/`.
-
----
-
-## Pasos de Ejecución
-
-### Paso 1: Determinar Nombre del Proyecto y Ubicación
-1. Identificar el nombre del proyecto o directorio actual (ej. `ThinkingSeed`, `MyCloudProject`, etc.).
-2. Confirmar la ruta base del proyecto actual ($PROJECT_DIR).
-3. Asegurar que existe la subcarpeta `$PROJECT_DIR/001_Seed/`. Si no existe, crearla.
-
-### Paso 2: Inspección y Análisis Técnico
-El agente actuará como **Arquitecto de Software Senior** e inspeccionará el repositorio para extraer los datos necesarios para llenar cada sección de la plantilla maestra:
-
-1. **Raíz y Archivos Clave:** Leer `package.json`, `pyproject.toml`, `requirements.txt`, `go.mod`, `pom.xml`, `Dockerfile`, `docker-compose.yml`, o equivalentes para determinar stack, versiones y dependencias.
-2. **Estructura del Proyecto:** Generar la topología del árbol de archivos omitiendo directorios no relevantes (`.git`, `node_modules`, `__pycache__`, `.venv`, etc.).
-3. **Flujos de Ejecución y Entry Points:** Localizar los puntos de entrada principales (`main.py`, `index.js`, `App.tsx`, scripts de inicio) y mapear los flujos de datos.
-4. **Variables de Configuración:** Inspeccionar archivos `.env.example`, `config.yaml`, o llamadas a variables de entorno.
-
-### Paso 3: Aplicar Reglas de Epistemología y Seguridad
-1. **Etiquetado de Evidencia:**
-   - Usar `[CONFIRMADO]` para hallazgos directamente validados en el código/configuración.
-   - Usar `[INFERIDO]` para deducciones lógicas sobre la arquitectura.
-   - Usar `[FALTANTE]` para componentes esperados que no se hayan encontrado.
-2. **Sanitización de Secretos:**
-   - Reemplazar cualquier password, token, clave privada o credential string por `<REDACTED>`.
-
-### Paso 4: Generación del Archivo Seed
-Crear o sobrescribir el archivo `$PROJECT_DIR/001_Seed/seed-[nombre-proyecto].md` con el siguiente formato exacto basado en `ThinkingSeed_MasterHybrid.md`:
-
-```markdown
 <!-- ============================================================================== -->
 <!-- THINKINGSEED: ADN DEL PROYECTO (CONTEXTO PASIVO PARA MODELOS DE LENGUAJE)     -->
 <!-- ============================================================================== -->
@@ -113,7 +72,4 @@ Crear o sobrescribir el archivo `$PROJECT_DIR/001_Seed/seed-[nombre-proyecto].md
 3. **Citar Rutas:** Usar las rutas de archivo declaradas en la topología al sugerir modificaciones.
 4. **Respetar:** Mantener el stack, contratos y restricciones de seguridad.
 5. **Acuse de Recibo Inicial:** Si el usuario adjuntó esta semilla sin una pregunta concreta, responde en máximo 3 líneas resumiendo el nombre del proyecto, stack y objetivo, confirmando que has asimilado el ADN del proyecto y quedando a la espera de sus consultas o tareas.
-```
 
-### Paso 5: Notificación
-Confirmar al usuario la generación exitosa del archivo con el enlace relativo y absoluto al archivo `001_Seed/seed-[nombre-proyecto].md`.

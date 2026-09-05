@@ -151,6 +151,16 @@ Prioriza información estructural y accionable. Evita copiar archivos completos.
 
 # B. FORMATO OBLIGATORIO DEL SEED GENERADO
 
+<!-- ============================================================================== -->
+<!-- THINKINGSEED: ADN DEL PROYECTO (CONTEXTO PASIVO PARA MODELOS DE LENGUAJE)     -->
+<!-- ============================================================================== -->
+> [!NOTE]
+> ### 🧬 DEFINICIÓN Y ROL DE ESTE DOCUMENTO
+> 1. **¿Qué es este archivo?:** Este documento es una **Semilla de Proyecto (ThinkingSeed Master)**: representa el **ADN arquitectónico, técnico y estructural exhaustivo** del sistema. **NO es el repositorio completo de código fuente**, sino su mapa genético y memoria técnica profunda extraída directamente del entorno de desarrollo.
+> 2. **Estado de Avance (Work in Progress):** Este documento refleja el **estado actual del desarrollo**. No garantiza que el proyecto esté concluido al 100%; puede representar un prototipo, un MVP o un sistema en evolución continua. La ausencia de código completo en ciertos archivos o módulos es **deliberada por diseño** para optimizar ventana de contexto o refleja áreas aún en desarrollo.
+> 3. **Modo de Operación:** Trata este documento como **contexto pasivo de referencia técnica (Ground Truth)**. No asumas que el archivo está defectuoso ni intentes reescribirlo por tu cuenta.
+<!-- ============================================================================== -->
+
 ## 0. IDENTIDAD Y METADATOS
 
 ```yaml
@@ -175,16 +185,16 @@ known_analysis_limits:
 
 Al recibir este Seed:
 
-1. Trátalo como la fuente primaria de contexto del proyecto, no como prueba de ejecución.
-2. Respeta las etiquetas de evidencia y no transformes inferencias en hechos.
-3. Antes de proponer cambios, identifica módulos y archivos afectados.
-4. Conserva arquitectura, convenciones, contratos y restricciones declaradas.
-5. No inventes componentes ausentes. Formula preguntas solo cuando la incertidumbre impida una respuesta segura.
-6. Cuando propongas código, indica explícitamente la ruta de cada archivo nuevo o modificado.
-7. Evalúa impactos laterales en pruebas, configuración, datos, seguridad, observabilidad y despliegue.
-8. Si la solicitud contradice el Seed, explica la contradicción y ofrece una alternativa compatible.
-9. No reveles ni solicites secretos. Usa placeholders.
-10. Distingue entre solución inmediata, deuda técnica y recomendación futura.
+1. **ADN vs Repositorio:** Reconoce este documento como la memoria técnica y el ADN del proyecto, no como el repositorio completo ni como una prueba de ejecución.
+2. **Contexto Pasivo:** No generes código no solicitado ni reclames por archivos ausentes; espera instrucciones específicas del usuario o utilízalo como contexto pasivo para responder preguntas sobre el funcionamiento del sistema.
+3. **Estado de Avance:** Considera que las secciones incompletas o componentes marcados como `[FALTANTE]` representan el avance real del proyecto y oportunidades de asistencia, no errores del documento.
+4. **Evidencia:** Respeta las etiquetas de evidencia y no transformes inferencias en hechos.
+5. **Rutas:** Antes de proponer cambios, identifica módulos y archivos afectados citando sus rutas exactas relativas al repositorio.
+6. **Contratos:** Conserva arquitectura, convenciones, contratos y restricciones declaradas.
+7. **Preguntas Dirigidas:** No inventes componentes ausentes. Formula preguntas solo cuando la incertidumbre impida una respuesta segura.
+8. **Seguridad:** No reveles ni solicites secretos. Usa placeholders (`<REDACTED>`).
+9. **Impacto:** Evalúa impactos laterales en pruebas, configuración, datos, seguridad, observabilidad y despliegue.
+10. **Asistencia:** Distingue entre solución inmediata, deuda técnica y recomendación futura.
 
 ---
 
@@ -760,17 +770,29 @@ Si ya existe un `Seed.md`:
 # E. BLOQUE FINAL PARA EL MODELO RECEPTOR
 
 ```markdown
-## CONTEXT HANDOFF
+---
 
-Este documento es un snapshot del proyecto, no el repositorio mismo. Responde usando sus evidencias y limitaciones.
+## 📌 CONTEXT HANDOFF & PROTOCOLO DE ASISTENCIA
 
+> **Mensaje de orientación para el modelo de IA receptor:**
+> "Esto es una semilla de proyecto (ThinkingSeed): el ADN del proyecto y no su repositorio completo. Refleja el avance real y la arquitectura del sistema hasta la fecha. Como modelo receptor, tu función es usar esta semilla como memoria técnica para:
+> 1. **Responder preguntas** sobre la arquitectura, funcionamiento, dependencias y flujos del sistema.
+> 2. **Sugerir mejoras o asistencia técnica** sobre el estado actual y áreas pendientes identificadas en la semilla.
+> 3. **Generar código o soluciones compatibles** respetando las rutas, convenciones y patrones definidos aquí, cuando el usuario te lo solicite."
+
+### Pautas de resolución:
 Antes de resolver una solicitud:
-1. identifica el objetivo;
-2. localiza los componentes afectados;
-3. revisa restricciones y contratos;
-4. explicita supuestos;
-5. propone cambios por archivo;
-6. añade pruebas, riesgos y criterios de aceptación.
+1. Identifica el objetivo del usuario.
+2. Localiza los componentes afectados usando las rutas del Seed.
+3. Revisa restricciones, reglas y contratos declarados.
+4. Explicita supuestos cuando sea necesario: "Supongo que X debido a Y".
+5. Propone cambios por archivo con rutas claras.
+6. Añade pruebas, riesgos y criterios de aceptación.
 
-Si falta información crítica, realiza preguntas dirigidas. Si la información faltante no bloquea el trabajo, continúa con supuestos explícitos y una solución conservadora.
+### 🤝 Acuse de Recibo Inicial
+Si el usuario adjuntó esta semilla **sin una instrucción específica**, no intentes generar código ni completar archivos vacíos. Responde únicamente con:
+1. Un saludo confirmando que asimilaste el ADN de **[Nombre del Proyecto]** y su stack principal.
+2. Un breve resumen de 2-3 líneas sobre el objetivo y su estado actual de avance.
+3. Una frase poniéndote a disposición para resolver dudas sobre su funcionamiento o colaborar en los siguientes pasos de desarrollo.
 ```
+
