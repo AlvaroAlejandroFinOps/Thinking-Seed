@@ -82,15 +82,58 @@ Cualquier modelo que utilice un `Seed.md` debe respetar estas directrices no neg
 
 ---
 
-## 5. Integración con Git
+## 5. Niveles de Profundidad de Semilla
 
-Para mantener el `Seed.md` siempre relevante:
+| Comando | Tipo de Seed | Ubicación de Salida | Propósito y Frecuencia |
+| :--- | :--- | :--- | :--- |
+| **`/seed`** | **Híbrido (Ágil)** | `001_Seed/seed-[proyecto].md` | **Uso frecuente.** Snapshot condensado de alta densidad. Rápido y eficiente para transferir el ADN a cualquier chat de IA. |
+| **`/seedMaster`** | **Master (Exhaustivo)** | `001_Seed/seed-[proyecto]-master.md` | **Uso ocasional.** Auditoría arquitectónica profunda, modos de falla, CI/CD, contratos y deuda técnica detallada. |
+
+> Ambos tipos de seed incluyen en su encabezado la **Directiva de ADN de Proyecto** (para que la IA sepa que es contexto pasivo de un proyecto en avance y no un código incompleto) y el **Protocolo de Asistencia & Handshake** al cierre.
+
+---
+
+## 6. Instalación Transversal Multi-Agente (Claude, Cursor, Gemini, Windsurf, Copilot)
+
+ThinkingSeed es **agnóstico y transversal**. No importa qué asistente utilices tú o tus colegas en su día a día, el repositorio incluye configuraciones listas para los entornos más populares:
+
+- **Claude Code (Anthropic CLI):** Soporte nativo mediante [`CLAUDE.md`](file:///CLAUDE.md).
+- **Google Antigravity / Gemini CLI:** Soporte mediante [`GEMINI.md`](file:///GEMINI.md) y standard Agent Skills.
+- **Cursor IDE:** Configurado vía [`.cursorrules`](file:///.cursorrules).
+- **Windsurf IDE (Codeium):** Configurado vía [`.windsurfrules`](file:///.windsurfrules).
+- **GitHub Copilot:** Soporte vía [`.github/copilot-instructions.md`](file:///.github/copilot-instructions.md).
+- **Estándar Universal de Agentes:** Compatible mediante [`AGENTS.md`](file:///AGENTS.md) y `.agents/skills/`.
+
+### Instalador Universal de 1 Línea
+
+Para que cualquier usuario pueda utilizar `/seed` y `/seedMaster` en su máquina o integrarlo en sus proyectos, el repositorio incluye un instalador automático multiplataforma (Windows, Linux, macOS):
 
 ```bash
-# Ejemplo de workflow manual
-# 1. Analizar estado actual del repo
-# 2. Generar/Actualizar Seed.md
-# 3. Commit del nuevo snapshot técnico
-git add Seed.md
+# 1. Clonar el repositorio
+git clone https://github.com/AlvaroAlejandroFinOps/Thinking-Seed.git
+cd Thinking-Seed
+
+# 2.A Instalación Global en tu máquina (habilita /seed y /seedMaster globalmente en Antigravity y Claude)
+python scripts/install_skills.py --global-install
+
+# 2.B O inyectar el soporte en cualquier proyecto específico de tu equipo:
+python scripts/install_skills.py --target /ruta/a/tu-proyecto
+```
+
+Al inyectar el soporte en un proyecto destino, se configuran automáticamente las skills y las directivas de todos los agentes (`CLAUDE.md`, `.cursorrules`, `.windsurfrules`, `GEMINI.md`, etc.), permitiendo que cualquier miembro del equipo invoque `/seed` o `/seedMaster` desde su herramienta preferida.
+
+---
+
+## 7. Integración con Git
+
+Para mantener el `Seed` siempre relevante en el ciclo de vida del repositorio:
+
+```bash
+# 1. Analizar el estado actual y generar el snapshot
+/seed
+
+# 2. Commit del nuevo ADN técnico
+git add 001_Seed/
 git commit -m "docs(seed): update architectural snapshot for [version/feature]"
 git push
+```

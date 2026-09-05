@@ -1,0 +1,11 @@
+# ThinkingSeed Windsurf Rules
+
+This project follows the **ThinkingSeed Standard** for architectural documentation and agentic memory.
+
+## Guidelines
+- **Project DNA:** A ThinkingSeed represents the architectural DNA of the project, not the full codebase.
+- **Commands:**
+  - `/seed`: Generates `001_Seed/seed-[project-name].md` (Hybrid fast snapshot).
+  - `/seedMaster`: Generates `001_Seed/seed-[project-name]-master.md` (Deep architectural audit).
+- **Evidence Tags:** Tag critical statements with `[CONFIRMADO]`, `[INFERIDO]`, or `[FALTANTE]`.
+- **Security:** Never expose real credentials or connection strings; replace them with `<REDACTED>`.
