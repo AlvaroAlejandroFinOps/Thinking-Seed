@@ -1,6 +1,6 @@
 ![Gravity HyperScale Thinking](image.png)
 
-# GHT-SEED: Especificación de Semilla Gravity HyperScale Thinking
+# THINKING SEED: Especificación de Semilla Gravity HyperScale Thinking
 
 **Idioma:** [English](README.md) | [Español](README_ES.md)
 
