@@ -4,11 +4,11 @@
 
 ## 1. Project DNA Concept
 - A ThinkingSeed is the architectural DNA and technical memory of a project, **NOT its full source code repository**.
-- Seeds reside in `001_Seed/` and provide high-density ground truth for conversational LLMs and coding agents.
+- Seeds reside in `01_seed/` and provide high-density ground truth for conversational LLMs and coding agents.
 
 ## 2. Workflows
-- **`/seed`**: Fast, hybrid snapshot. Generates `001_Seed/seed-[project-name].md`.
-- **`/seedMaster`**: Deep, exhaustive audit. Generates `001_Seed/seed-[project-name]-master.md`.
+- **`/seed`**: Fast, hybrid snapshot. Generates `01_seed/seed-[project-name].md`.
+- **`/seedMaster`**: Deep, exhaustive audit. Generates `01_seed/seed-[project-name]-master.md`.
 
 ## 3. Epistemic Rigor & Security
 - `[CONFIRMADO]`: Directly verified in repository code/manifests.

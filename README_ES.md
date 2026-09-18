@@ -21,7 +21,7 @@
 
 El **Protocolo de Semilla Gravity HyperScale Thinking (GHT)** es un marco de trabajo de ingeniería diseñado para cerrar la brecha operativa entre repositorios de software empresariales complejos y los límites de contexto cognitivo de los Modelos de Lenguaje de Gran Escala (LLMs) y agentes autónomos de razonamiento. En los flujos modernos de ingeniería de software, la eficiencia de inferencia del modelo se degrada exponencialmente a medida que el contexto del workspace se expande, introduciendo pérdida crítica de contexto, contratos estructurales alucinados y consumo redundante de tokens.
 
-GHT Seed estandariza la generación de un payload arquitectónico inmutable y autosuficiente: `Seed.md`. Funcionando como un contrato determinista y un vector de estado cognitivo, el Seed encapsula la topología, los invariantes de estado, esquemas de datos y límites de ejecución. Al desacoplar el razonamiento del modelo de la exploración bruta de archivos, GHT Seed establece una capa de memoria técnica interoperable a través de entornos de IA heterogéneos.
+GHT Seed estandariza la generación de un payload arquitectónico inmutable y autosuficiente: `01_seed/seed-[proyecto].md`. Funcionando como un contrato determinista y un vector de estado cognitivo, el Seed encapsula la topología, los invariantes de estado, esquemas de datos y límites de ejecución. Integrado con la arquitectura de contexto **iDirectory v3.0**, GHT Seed establece una capa de memoria técnica interoperable a través de entornos de IA heterogéneos.
 
 ---
 
@@ -48,8 +48,8 @@ La arquitectura de GHT Seed opera a través de tres fases operativas distintas: 
 |         v                                                                     |
 |  [ Generador de Artefactos Seed ]                                             |
 |         │                                                                     |
-|         ├── /seed (Núcleo Híbrido Ágil) ───> 001_Seed/seed-[proyecto].md       |
-|         └── /seedMaster (Auditoría Master) ─> 001_Seed/seed-[proyecto]-master.md
+|         ├── /seed (Núcleo Híbrido Ágil) ───> 01_seed/seed-[proyecto].md       |
+|         └── /seedMaster (Auditoría Master) ─> 01_seed/seed-[proyecto]-master.md
 |         │                                                                     |
 |         v                                                                     |
 |  [ Capa de Handoff Multi-Agente ]                                             |
@@ -87,7 +87,7 @@ $$V(A_i) = \begin{cases}
 
 ## 4. Rendimiento Empírico y Benchmarks
 
-Evaluaciones empíricas a través de benchmarks multi-agente demuestran mejoras sustanciales en latencia, utilización de contexto y precisión de razonamiento al utilizar snapshots `Seed.md` en comparación con la ingesta directa sin comprimir:
+Evaluaciones empíricas a través de benchmarks multi-agente demuestran mejoras sustanciales en latencia, utilización de contexto y precisión de razonamiento al utilizar snapshots `01_seed/` en comparación con la ingesta directa sin comprimir:
 
 | Métrica de Evaluación | Ingesta Bruta de Workspace | Protocolo GHT Seed | Impacto de Optimización |
 |:---|:---|:---|:---|
@@ -104,13 +104,42 @@ Evaluaciones empíricas a través de benchmarks multi-agente demuestran mejoras 
 ThinkingSeed/
 ├── .agents/
 │   └── skills/
-│       ├── seed/                    # Skill para generación híbrida ágil de seeds
+│       ├── seed/                    # Skill para generación híbrida ágil de seeds (/seed)
 │       │   └── SKILL.md
-│       └── seedMaster/              # Skill para generación master de auditoría profunda
+│       └── seedMaster/              # Skill para generación master de auditoría profunda (/seedMaster)
 │           └── SKILL.md
-├── 001_Seed/                        # Directorio de salida para snapshots seed
-├── scripts/
-│   └── install_skills.py            # Instalador universal multiplataforma (CLI/IDE)
+├── .context/                        # Telemetría de context engineering y mapas satelitales
+├── .github/
+│   └── copilot-instructions.md      # Instrucciones de contexto para GitHub Copilot
+├── 01_seed/                         # [p0] Directorio canónico para snapshots seed generados
+│   ├── .context.yaml
+│   └── seed-ThinkingSeed-master.md  # ADN técnico y ground truth del repositorio
+├── 01_Status/                       # Informes de estado de avance y desempeño operativo
+├── 02_foundation/                   # [p1] Núcleo del framework y gobernanza
+│   └── engine/
+│       ├── .context.yaml
+│       └── engine_readme.md         # Especificación de gobernanza iDirectory v3.0
+├── 03_research/                     # [p1-p2] Investigación, experimentos, notebooks y catálogo de prompts
+│   ├── experiments/
+│   ├── notebooks/
+│   └── prompts/
+├── artifacts/                       # [p1-p3] Planes de capacidad y decisiones arquitectónicas
+│   └── plans/
+│       ├── active/
+│       └── archive/
+├── config/                          # [p1] Parámetros desacoplados por ambiente
+├── data/                            # [p3] Zona de tiering de datos (raw / processed / sandbox)
+├── docs/                            # [p1-p2] Documentación técnica (arquitectura / notas / especificaciones)
+├── logs/                            # [p3] Trazas locales de ejecución y auditoría
+├── schemas/                         # [p1] Definiciones de contratos (Avro / JSON Schema / DDL)
+├── scripts/                         # [p2] Scripts operativos e instalador universal
+│   ├── .context.yaml
+│   └── install_skills.py            # Instalador universal multiplataforma (CLI / IDE)
+├── src/                             # [p1-p2] Módulos de implementación (cloud_jobs / core / dashboards)
+├── tests/                           # [p1] Suites de pruebas y especificaciones mínimas de test
+│   ├── .context.yaml
+│   └── ThinkingSeed_Mini.md
+├── Tools/                           # [p2] Herramientas utilitarias y recursos visuales de arquitectura
 ├── AGENTS.md                        # Especificación de directivas universales para agentes
 ├── CLAUDE.md                        # Directivas de integración para Anthropic Claude Code
 ├── GEMINI.md                        # Directivas para Google Antigravity y Gemini CLI
@@ -118,8 +147,8 @@ ThinkingSeed/
 ├── .windsurfrules                   # Directivas de workspace para Windsurf IDE (Codeium)
 ├── README.md                        # Documentación maestra de ingeniería (Inglés)
 ├── README_ES.md                     # Documentación maestra de ingeniería (Español)
-├── ThinkingSeed_MasterHybrid.md     # Estándar de plantilla para Seed Híbrido
-└── ThinkingSeed Master.md           # Estándar de plantilla para Seed Master
+├── ThinkingSeed Master.md           # Estándar de plantilla para Seed Master
+└── ThinkingSeed_MasterHybrid.md     # Estándar de plantilla para Seed Híbrido
 ```
 
 ---
@@ -128,7 +157,7 @@ ThinkingSeed/
 
 ### 6.1. Configuración de Entorno y Prerrequisitos
 
-Las herramientas de ThinkingSeed requieren Python 3.8+ y entornos de shell estándar (Bash / PowerShell).
+Las herramientas de ThinkingSeed requieren Python 3.10+ y entornos de shell estándar (Bash / PowerShell).
 
 ```bash
 # Clonar el repositorio
@@ -160,7 +189,7 @@ Ejecuta los protocolos de generación directamente en la sesión interactiva del
 /seedMaster
 
 # Control de versiones del snapshot arquitectónico
-git add 001_Seed/
+git add 01_seed/
 git commit -m "docs(seed): update architectural snapshot for [version/feature]"
 git push
 ```

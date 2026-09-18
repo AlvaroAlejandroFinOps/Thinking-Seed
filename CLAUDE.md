@@ -18,15 +18,15 @@ When the user types `/seed` or asks for a project seed:
 1. Inspect the current workspace (dependencies, file tree, entry points, configs, core flows).
 2. Apply evidence tags: `[CONFIRMADO]`, `[INFERIDO]`, `[FALTANTE]`.
 3. Sanitize all sensitive data (passwords, API keys, tokens) using `<REDACTED>`.
-4. Ensure directory `001_Seed/` exists in the workspace.
-5. Create or update `001_Seed/seed-[project-name].md` following the template in `ThinkingSeed_MasterHybrid.md` (or `.agents/skills/seed/SKILL.md`).
+4. Ensure directory `01_seed/` exists in the workspace.
+5. Create or update `01_seed/seed-[project-name].md` following the template in `ThinkingSeed_MasterHybrid.md` (or `.agents/skills/seed/SKILL.md`).
 6. **MANDATORY:** Include the top banner declaring the document as project DNA / passive context, and the bottom handshake block for receptor models.
 
 ### 2. `/seedMaster` (Master ThinkingSeed - Deep & Exhaustive)
 When the user types `/seedMaster` or asks for the deep/exhaustive master seed:
 1. Perform a deep, granular inspection of the repository (testing strategy, CI/CD, contracts, failure modes, data persistence, technical debt).
-2. Ensure directory `001_Seed/` exists in the workspace.
-3. Create or update `001_Seed/seed-[project-name]-master.md` following `ThinkingSeed Master.md` (or `.agents/skills/seedMaster/SKILL.md`).
+2. Ensure directory `01_seed/` exists in the workspace.
+3. Create or update `01_seed/seed-[project-name]-master.md` following `ThinkingSeed Master.md` (or `.agents/skills/seedMaster/SKILL.md`).
 4. Apply strict evidence tags and secret redaction (`<REDACTED>`).
 
 ---

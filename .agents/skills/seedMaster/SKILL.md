@@ -2,13 +2,13 @@
 name: seedMaster
 description: >-
   Crea un snapshot técnico exhaustivo y profundo (ADN completo) de un proyecto en formato seed-[nombre-proyecto]-master.md
-  siguiendo el estándar ThinkingSeed Master.md y alojándolo en la carpeta 001_Seed del directorio actual.
+  siguiendo el estándar ThinkingSeed Master.md y alojándolo en la carpeta 01_seed del directorio actual.
   Usar cuando el usuario ponga /seedMaster o solicite crear el seed exhaustivo/profundo del proyecto.
 ---
 
 # Workflow: Generación de ThinkingSeed Master Exhaustivo (`/seedMaster`)
 
-Este workflow inspecciona a profundidad el proyecto o subdirectorio actual y genera un archivo de documentación arquitectónica de máxima granularidad denominado `seed-[nombre-proyecto]-master.md` alojado en `<directorio-actual>/001_Seed/`.
+Este workflow inspecciona a profundidad el proyecto o subdirectorio actual y genera un archivo de documentación arquitectónica de máxima granularidad denominado `seed-[nombre-proyecto]-master.md` alojado en `<directorio-actual>/01_seed/`.
 
 > **Nota de Frecuencia:** Esta skill es de **uso ocasional** para análisis profundos, auditorías exhaustivas o transferencias complejas de contexto donde se requiere máximo detalle. Para uso regular y ágil, utilizar `/seed`.
 
@@ -19,7 +19,7 @@ Este workflow inspecciona a profundidad el proyecto o subdirectorio actual y gen
 ### Paso 1: Determinar Nombre del Proyecto y Ubicación
 1. Identificar el nombre del proyecto o directorio actual.
 2. Confirmar la ruta base del proyecto actual ($PROJECT_DIR).
-3. Asegurar que existe la subcarpeta `$PROJECT_DIR/001_Seed/`. Si no existe, crearla.
+3. Asegurar que existe la subcarpeta `$PROJECT_DIR/01_seed/`. Si no existe, crearla.
 
 ### Paso 2: Inspección y Análisis Técnico Profundo
 El agente actuará como **Arquitecto de Software, Analista de Repositorios y Documentador Técnico Senior** siguiendo el contrato de `ThinkingSeed Master.md`:
@@ -46,7 +46,7 @@ El agente actuará como **Arquitecto de Software, Analista de Repositorios y Doc
    - Reemplazar cualquier secreto, token o clave privada por `<REDACTED>`.
 
 ### Paso 4: Generación del Archivo Seed Master
-Crear o sobrescribir el archivo `$PROJECT_DIR/001_Seed/seed-[nombre-proyecto]-master.md` asegurando que inicie con el bloque de ADN y contexto pasivo, y concluya con el protocolo de asistencia:
+Crear o sobrescribir el archivo `$PROJECT_DIR/01_seed/seed-[nombre-proyecto]-master.md` asegurando que inicie con el bloque de ADN y contexto pasivo, y concluya con el protocolo de asistencia:
 
 ```markdown
 <!-- ============================================================================== -->
@@ -132,4 +132,4 @@ Si el usuario adjuntó esta semilla **sin una instrucción específica**, no int
 ```
 
 ### Paso 5: Notificación
-Confirmar al usuario la generación exitosa del archivo con el enlace relativo y absoluto al archivo `001_Seed/seed-[nombre-proyecto]-master.md`.
+Confirmar al usuario la generación exitosa del archivo con el enlace relativo y absoluto al archivo `01_seed/seed-[nombre-proyecto]-master.md`.el archivo con el enlace relativo y absoluto al archivo `001_Seed/seed-[nombre-proyecto]-master.md`.

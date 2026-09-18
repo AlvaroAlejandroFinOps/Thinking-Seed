@@ -2,13 +2,13 @@
 name: seed
 description: >-
   Crea un snapshot técnico y portable de un proyecto en formato seed-[nombre-proyecto].md
-  siguiendo el estándar ThinkingSeed_MasterHybrid.md y alojándolo en la carpeta 001_Seed
+  siguiendo el estándar ThinkingSeed_MasterHybrid.md y alojándolo en la carpeta 01_seed
   del directorio donde se ejecute. Usar cuando el usuario ponga /seed o solicite crear el seed del proyecto.
 ---
 
 # Workflow: Generación de ThinkingSeed Master Hybrid (`/seed`)
 
-Este workflow inspecciona el proyecto o subdirectorio actual y genera un archivo de documentación técnica estructurada y verificable denominado `seed-[nombre-proyecto].md` alojado en `<directorio-actual>/001_Seed/`.
+Este workflow inspecciona el proyecto o subdirectorio actual y genera un archivo de documentación técnica estructurada y verificable denominado `seed-[nombre-proyecto].md` alojado en `<directorio-actual>/01_seed/`.
 
 ---
 
@@ -17,7 +17,7 @@ Este workflow inspecciona el proyecto o subdirectorio actual y genera un archivo
 ### Paso 1: Determinar Nombre del Proyecto y Ubicación
 1. Identificar el nombre del proyecto o directorio actual (ej. `ThinkingSeed`, `MyCloudProject`, etc.).
 2. Confirmar la ruta base del proyecto actual ($PROJECT_DIR).
-3. Asegurar que existe la subcarpeta `$PROJECT_DIR/001_Seed/`. Si no existe, crearla.
+3. Asegurar que existe la subcarpeta `$PROJECT_DIR/01_seed/`. Si no existe, crearla.
 
 ### Paso 2: Inspección y Análisis Técnico
 El agente actuará como **Arquitecto de Software Senior** e inspeccionará el repositorio para extraer los datos necesarios para llenar cada sección de la plantilla maestra:
@@ -36,7 +36,7 @@ El agente actuará como **Arquitecto de Software Senior** e inspeccionará el re
    - Reemplazar cualquier password, token, clave privada o credential string por `<REDACTED>`.
 
 ### Paso 4: Generación del Archivo Seed
-Crear o sobrescribir el archivo `$PROJECT_DIR/001_Seed/seed-[nombre-proyecto].md` con el siguiente formato exacto basado en `ThinkingSeed_MasterHybrid.md`:
+Crear o sobrescribir el archivo `$PROJECT_DIR/01_seed/seed-[nombre-proyecto].md` con el siguiente formato exacto basado en `ThinkingSeed_MasterHybrid.md`:
 
 ```markdown
 <!-- ============================================================================== -->
@@ -116,4 +116,4 @@ Crear o sobrescribir el archivo `$PROJECT_DIR/001_Seed/seed-[nombre-proyecto].md
 ```
 
 ### Paso 5: Notificación
-Confirmar al usuario la generación exitosa del archivo con el enlace relativo y absoluto al archivo `001_Seed/seed-[nombre-proyecto].md`.
+Confirmar al usuario la generación exitosa del archivo con el enlace relativo y absoluto al archivo `01_seed/seed-[nombre-proyecto].md`.

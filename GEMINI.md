@@ -7,7 +7,7 @@
 ## 1. ESTÁNDAR THINKINGSEED & CONCEPTO DE ADN
 - Un ThinkingSeed es el **ADN arquitectónico y memoria técnica** de un proyecto, **NO su repositorio de código completo**.
 - Todo seed generado debe incluir el bloque de **Directiva para Modelos de IA** al inicio (aclarando que es contexto pasivo y snapshot de avance en curso) y el **Protocolo de Asistencia & Handshake** al cierre.
-- Los archivos seed generados deben almacenarse siempre dentro de la subcarpeta `001_Seed/` del directorio del proyecto o donde se ejecute la solicitud.
+- Los archivos seed generados deben almacenarse siempre dentro de la subcarpeta `01_seed/` del directorio del proyecto o donde se ejecute la solicitud.
 
 ---
 
@@ -16,12 +16,12 @@ Existen dos niveles de profundidad para la generación de seeds:
 
 1. **`/seed` (Estándar Híbrido - Uso Frecuente):**
    - Basado en [`ThinkingSeed_MasterHybrid.md`](file:///d:/0001%20HyperScale%20Thinking/PROYECTOS%20CLOUD/engineData/ThinkingSeed/ThinkingSeed_MasterHybrid.md).
-   - Genera: `001_Seed/seed-[nombre-proyecto].md`.
+   - Genera: `01_seed/seed-[nombre-proyecto].md`.
    - Ágil, condensado y enfocado en transferir el ADN de forma eficiente a chats de IA comercial.
 
 2. **`/seedMaster` (Estándar Exhaustivo - Uso Ocasional):**
    - Basado en [`ThinkingSeed Master.md`](file:///d:/0001%20HyperScale%20Thinking/PROYECTOS%20CLOUD/engineData/ThinkingSeed/ThinkingSeed%20Master.md).
-   - Genera: `001_Seed/seed-[nombre-proyecto]-master.md`.
+   - Genera: `01_seed/seed-[nombre-proyecto]-master.md`.
    - Análisis profundo, minucioso y exhaustivo para auditorías completas, migraciones o arquitecturas de alta complejidad.
 
 ---

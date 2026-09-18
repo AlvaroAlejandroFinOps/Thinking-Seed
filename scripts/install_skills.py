@@ -107,9 +107,9 @@ def inject_into_project(target_path: Path) -> bool:
         shutil.copy2(copilot_src, target_github / "copilot-instructions.md")
         print(f"  [OK] GitHub Copilot configurado: {target_github / 'copilot-instructions.md'}")
 
-    # 4. Asegurar carpeta 001_Seed
-    (target / "001_Seed").mkdir(parents=True, exist_ok=True)
-    print(f"  [OK] Directorio 001_Seed/ preparado.")
+    # 4. Asegurar carpeta 01_seed
+    (target / "01_seed").mkdir(parents=True, exist_ok=True)
+    print(f"  [OK] Directorio 01_seed/ preparado.")
 
     print(f"\n¡Exito! El proyecto {target.name} ahora soporta /seed y /seedMaster en cualquier agente.")
     return True
