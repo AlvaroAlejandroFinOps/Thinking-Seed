@@ -1,8 +1,43 @@
+# Python & Virtual Environments
 .venv/
+venv/
+ENV/
 __pycache__/
-*.pyc
-.ipynb_checkpoints/
+*.py[cod]
+*$py.class
+*.ipynb_checkpoints/
 
-# Ignorar archivos de datos
+# Secrets & Environment Variables
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.pfx
+
+# Data Files & Datasets (Medallion local storage)
+data/raw/*
+!data/raw/.context.yaml
+data/processed/*
+!data/processed/.context.yaml
+data/sandbox/*
+!data/sandbox/.context.yaml
 *.csv
 *.parquet
+*.jsonl
+*.delta
+*.avro
+
+# Logs & Runtime Dumps
+logs/*
+!logs/.context.yaml
+*.log
+
+# OS & IDE Metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
